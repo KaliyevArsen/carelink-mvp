@@ -176,7 +176,3 @@ carelink/
 - Payment reconciliation (835 ERA)
 - Real insurance API integration (Availity, Change Healthcare)
 - EMR system integrations
-
-## License
-
-Proprietary - All rights reserved
