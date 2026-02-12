@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     try {
       await login(values.email, values.password);
       message.success('Login successful!');
-      navigate('/');
+      navigate('/app');
     } catch (error: any) {
       const errorMessage =
         error.response?.data?.detail || 'Login failed. Please try again.';

@@ -55,7 +55,7 @@ const Users: React.FC = () => {
         title="Access Denied"
         subTitle="Only administrators can manage users."
         extra={
-          <Button type="primary" href="/">
+          <Button type="primary" href="/app">
             Go to Dashboard
           </Button>
         }

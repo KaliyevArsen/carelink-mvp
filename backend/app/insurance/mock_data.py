@@ -1,72 +1,69 @@
 """Mock data for insurance eligibility simulation."""
 
-# Supported insurance companies
+# Supported insurance companies (Kazakhstan)
 INSURANCE_COMPANIES = [
-    "Blue Cross Blue Shield",
-    "Aetna",
-    "UnitedHealthcare",
-    "Cigna",
-    "Humana",
-    "Kaiser Permanente",
-    "Anthem",
-    "Molina Healthcare",
-    "Centene",
-    "Medicare",
-    "Medicaid",
+    "Халық-Қазақстан",
+    "Евразия",
+    "Номад Иншуранс",
+    "Виктория",
+    "Казахинстрах",
+    "Amanat",
+    "Freedom Finance Insurance",
+    "Kompetenz",
+    "Interteach",
+    "ФСМС (ОСМС)",  # Mandatory Social Health Insurance Fund
+    "Jusan Garant",
 ]
 
-# Plan types
-PLAN_TYPES = ["PPO", "HMO", "EPO", "POS", "HDHP"]
+# Plan types (Kazakhstan insurance types)
+PLAN_TYPES = ["Стандарт", "Комфорт", "Премиум", "VIP", "Базовый"]
 
 # Plan names by type
 PLAN_NAMES = {
-    "PPO": [
-        "PPO Gold 500",
-        "PPO Silver 1000",
-        "PPO Bronze 2500",
-        "PPO Platinum 250",
-        "PPO Standard",
-        "PPO Plus",
+    "Стандарт": [
+        "Стандарт 50",
+        "Стандарт 100",
+        "Стандарт Плюс",
+        "Стандарт Эконом",
     ],
-    "HMO": [
-        "HMO Select",
-        "HMO Basic",
-        "HMO Premium",
-        "HMO Community",
-        "HMO Value",
+    "Комфорт": [
+        "Комфорт Оптима",
+        "Комфорт Семейный",
+        "Комфорт Плюс",
+        "Комфорт Бизнес",
     ],
-    "EPO": [
-        "EPO Standard",
-        "EPO Plus",
-        "EPO Select",
+    "Премиум": [
+        "Премиум Голд",
+        "Премиум Платинум",
+        "Премиум Корпоратив",
     ],
-    "POS": [
-        "POS Flex",
-        "POS Choice",
-        "POS Premier",
+    "VIP": [
+        "VIP Exclusive",
+        "VIP International",
+        "VIP Elite",
     ],
-    "HDHP": [
-        "HDHP with HSA",
-        "HDHP Bronze",
-        "HDHP Silver",
+    "Базовый": [
+        "Базовый ОСМС",
+        "Базовый Стандарт",
+        "Базовый Плюс",
     ],
 }
 
-# Copay ranges by visit type (in dollars)
+# Copay ranges by visit type (in tenge - KZT)
 COPAY_RANGES = {
-    "primary_care": [20, 25, 30, 35, 40],
-    "specialist": [40, 50, 60, 75, 80],
-    "urgent_care": [50, 75, 100, 125],
-    "emergency": [150, 200, 250, 300, 350],
+    "primary_care": [2000, 3000, 4000, 5000, 7000],
+    "specialist": [5000, 7500, 10000, 12000, 15000],
+    "urgent_care": [8000, 10000, 15000, 20000],
+    "emergency": [15000, 25000, 35000, 50000],
 }
 
-# Deductible options
-DEDUCTIBLES_INDIVIDUAL = [250, 500, 750, 1000, 1500, 2000, 2500, 3000, 5000]
-DEDUCTIBLES_FAMILY = [500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 10000]
+# Deductible options (in tenge)
+DEDUCTIBLES_INDIVIDUAL = [25000, 50000, 75000, 100000, 150000, 200000, 300000]
+DEDUCTIBLES_FAMILY = [50000, 100000, 150000, 200000, 300000, 500000, 750000]
 
-# Out of pocket maximums
-OOP_MAX_INDIVIDUAL = [3000, 4000, 5000, 6000, 7000, 8000, 9000]
-OOP_MAX_FAMILY = [6000, 8000, 10000, 12000, 14000, 16000, 18000]
+# Out of pocket maximums (in tenge)
+OOP_MAX_INDIVIDUAL = [300000, 500000, 750000, 1000000, 1500000, 2000000]
+OOP_MAX_FAMILY = [600000, 1000000, 1500000, 2000000, 3000000, 4000000]
 
 # Coinsurance rates
 COINSURANCE_RATES = ["70%", "80%", "90%", "100%"]
@@ -93,20 +90,21 @@ ERROR_MESSAGES = {
     ],
 }
 
-# First names for generating subscriber names
+# First names for generating subscriber names (Kazakh/Russian names)
 FIRST_NAMES = [
-    "James", "Mary", "John", "Patricia", "Robert", "Jennifer",
-    "Michael", "Linda", "William", "Elizabeth", "David", "Barbara",
-    "Richard", "Susan", "Joseph", "Jessica", "Thomas", "Sarah",
-    "Charles", "Karen", "Christopher", "Nancy", "Daniel", "Lisa",
-    "Matthew", "Betty", "Anthony", "Margaret", "Mark", "Sandra",
+    "Айбек", "Арман", "Асхат", "Бауыржан", "Данияр", "Ерлан",
+    "Жанболат", "Нұрлан", "Серік", "Тимур", "Алмас", "Берік",
+    "Айгүл", "Аружан", "Гүлнар", "Дана", "Жанар", "Карина",
+    "Мадина", "Назгүл", "Сауле", "Томирис", "Әсел", "Балжан",
+    "Александр", "Дмитрий", "Сергей", "Анна", "Елена", "Ольга",
 ]
 
-# Last names for generating subscriber names
+# Last names for generating subscriber names (Kazakh/Russian surnames)
 LAST_NAMES = [
-    "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia",
-    "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez",
-    "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore",
-    "Jackson", "Martin", "Lee", "Perez", "Thompson", "White",
-    "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson",
+    "Назарбаев", "Токаев", "Сатпаев", "Байтұрсынов", "Құнанбаев",
+    "Ахметов", "Қасымов", "Жақсылықов", "Омаров", "Сейтқазин",
+    "Мұратов", "Бекенов", "Нұрланов", "Жұмабаев", "Қойшыбаев",
+    "Иванов", "Петров", "Сидоров", "Ким", "Пак", "Цой",
+    "Исаев", "Рахимов", "Садыков", "Тлеуов", "Әбдіраймов",
+    "Қалиев", "Әлиев", "Мәлікова", "Сәрсенова", "Батырханова",
 ]

@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Spin } from 'antd';
 import Layout from './components/Layout';
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import EligibilityCheck from './pages/EligibilityCheck';
@@ -32,43 +33,16 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return <>{children}</>;
 };
 
-// Public route wrapper (redirect if authenticated)
-const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isAuthenticated, isLoading } = useAuth();
-
-  if (isLoading) {
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh'
-      }}>
-        <Spin size="large" />
-      </div>
-    );
-  }
-
-  if (isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
-
-  return <>{children}</>;
-};
-
 function AppRoutes() {
   return (
     <Routes>
+      {/* Public landing page */}
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login />} />
+
+      {/* Protected app routes */}
       <Route
-        path="/login"
-        element={
-          <PublicRoute>
-            <Login />
-          </PublicRoute>
-        }
-      />
-      <Route
-        path="/"
+        path="/app"
         element={
           <ProtectedRoute>
             <Layout />
@@ -80,6 +54,7 @@ function AppRoutes() {
         <Route path="history" element={<History />} />
         <Route path="users" element={<Users />} />
       </Route>
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -35,7 +35,7 @@ const Layout: React.FC = () => {
   const getMenuItems = (): MenuProps['items'] => {
     const items: MenuProps['items'] = [
       {
-        key: '/',
+        key: '/app',
         icon: <DashboardOutlined />,
         label: 'Dashboard',
       },
@@ -44,7 +44,7 @@ const Layout: React.FC = () => {
     // Only Admin and Staff can perform eligibility checks
     if (user?.role === 'admin' || user?.role === 'staff') {
       items.push({
-        key: '/check',
+        key: '/app/check',
         icon: <SearchOutlined />,
         label: 'Check Eligibility',
       });
@@ -52,7 +52,7 @@ const Layout: React.FC = () => {
 
     // All roles can view history
     items.push({
-      key: '/history',
+      key: '/app/history',
       icon: <HistoryOutlined />,
       label: 'History',
     });
@@ -60,7 +60,7 @@ const Layout: React.FC = () => {
     // Only Admin can manage users
     if (user?.role === 'admin') {
       items.push({
-        key: '/users',
+        key: '/app/users',
         icon: <TeamOutlined />,
         label: 'Manage Users',
       });

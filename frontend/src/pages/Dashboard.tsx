@@ -158,7 +158,7 @@ const Dashboard: React.FC = () => {
         <Button
           type="primary"
           icon={<SearchOutlined />}
-          onClick={() => navigate('/check')}
+          onClick={() => navigate('/app/check')}
         >
           New Eligibility Check
         </Button>
@@ -210,7 +210,7 @@ const Dashboard: React.FC = () => {
         title="Recent Eligibility Checks"
         style={{ marginTop: 24 }}
         extra={
-          <Button type="link" onClick={() => navigate('/history')}>
+          <Button type="link" onClick={() => navigate('/app/history')}>
             View All <ArrowRightOutlined />
           </Button>
         }
@@ -228,7 +228,7 @@ const Dashboard: React.FC = () => {
             description="No eligibility checks yet"
             style={{ padding: 40 }}
           >
-            <Button type="primary" onClick={() => navigate('/check')}>
+            <Button type="primary" onClick={() => navigate('/app/check')}>
               Perform First Check
             </Button>
           </Empty>

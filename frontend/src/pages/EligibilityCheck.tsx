@@ -51,7 +51,7 @@ const EligibilityCheck: React.FC = () => {
         title="Access Restricted"
         subTitle="Viewers can only view eligibility check history. Contact your administrator to upgrade your access."
         extra={
-          <Button type="primary" href="/history">
+          <Button type="primary" href="/app/history">
             View History
           </Button>
         }
@@ -74,17 +74,19 @@ const EligibilityCheck: React.FC = () => {
       setInsurers(data);
     } catch (error) {
       console.error('Failed to load insurers:', error);
-      // Fallback list
+      // Fallback list (Kazakhstani insurance companies)
       setInsurers([
-        'Blue Cross Blue Shield',
-        'Aetna',
-        'UnitedHealthcare',
-        'Cigna',
-        'Humana',
-        'Kaiser Permanente',
-        'Anthem',
-        'Medicare',
-        'Medicaid',
+        'Халық-Қазақстан',
+        'Евразия',
+        'Номад Иншуранс',
+        'Виктория',
+        'Казахинстрах',
+        'Amanat',
+        'Freedom Finance Insurance',
+        'Kompetenz',
+        'Interteach',
+        'ФСМС (ОСМС)',
+        'Jusan Garant',
       ]);
     } finally {
       setLoadingInsurers(false);
@@ -312,7 +314,7 @@ const EligibilityCheck: React.FC = () => {
                   >
                     <Input
                       prefix={<UserOutlined style={{ color: '#bfbfbf' }} />}
-                      placeholder="John"
+                      placeholder="Арман"
                     />
                   </Form.Item>
                 </Col>
@@ -322,7 +324,7 @@ const EligibilityCheck: React.FC = () => {
                     label="Patient Last Name"
                     rules={[{ required: true, message: 'Required' }]}
                   >
-                    <Input placeholder="Smith" />
+                    <Input placeholder="Қасымов" />
                   </Form.Item>
                 </Col>
               </Row>
